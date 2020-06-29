@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Weather Forecast</string>
+    <string name="city">Москва</string>
+    <string name="wind_speed">Ветер: 4 м/с, СВ</string>
+    <string name="current_temperature">+20°С</string>
+    <string name="atmosphere_pressure">Давление: 743 мм рт. ст.</string>
+    <string name="humidity">Влажность: 43%</string>
+    <string name="perceived_temperature">Ощущается как +18°С</string>
+</resources>
