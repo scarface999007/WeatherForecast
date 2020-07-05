@@ -6,4 +6,19 @@
     <string name="atmosphere_pressure">Давление: 743 мм рт. ст.</string>
     <string name="humidity">Влажность: 43%</string>
     <string name="perceived_temperature">Ощущается как +18°С</string>
+    <string name="search_title">Поиск</string>
+    <string name="notifications">Уведомления</string>
+    <string name="theme">Тема</string>
+    <string name="temperature">Температура</string>
+    <string name="wind_power">Сила ветра</string>
+    <string name="pressure">Давление</string>
+    <string name="celsius">°С</string>
+    <string name="fahrenheit">°F</string>
+    <string name="m_s">м/с</string>
+    <string name="km_s">км/ч</string>
+    <string name="mm_mercury">мм рт. ст.</string>
+    <string name="pascals">гПа</string>
+    <string name="bright">Светлая</string>
+    <string name="dark">Темная</string>
+    <string name="go_to_wiki">GO TO WIKI</string>
 </resources>
