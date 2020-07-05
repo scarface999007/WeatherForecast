@@ -20,4 +20,5 @@
     <string name="pascals">гПа</string>
     <string name="bright">Светлая</string>
     <string name="dark">Темная</string>
+    <string name="go_to_wiki">GO TO WIKI</string>
 </resources>

@@ -1,12 +1,17 @@
 package com.example.weatherforecast.data;
 
+import java.util.ArrayList;
+
 public class WeatherCity {
     private int id;
     private String city;
-    private double temperature;
-    private double windPower;
-    private double pressure;
-    private double humidity;
+    private ArrayList<WeatherParameters> weatherParameters;
+
+    public WeatherCity(int id, String city){
+        this.id = id;
+        this.city = city;
+        weatherParameters = new ArrayList<>();
+    }
 
     public int getId() {
         return id;
@@ -24,35 +29,11 @@ public class WeatherCity {
         this.city = city;
     }
 
-    public double getTemperature() {
-        return temperature;
+    public ArrayList<WeatherParameters> getWeatherParameters() {
+        return weatherParameters;
     }
 
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
-    }
-
-    public double getWindPower() {
-        return windPower;
-    }
-
-    public void setWindPower(double windPower) {
-        this.windPower = windPower;
-    }
-
-    public double getPressure() {
-        return pressure;
-    }
-
-    public void setPressure(double pressure) {
-        this.pressure = pressure;
-    }
-
-    public double getHumidity() {
-        return humidity;
-    }
-
-    public void setHumidity(double humidity) {
-        this.humidity = humidity;
+    public void setWeatherParameters(ArrayList<WeatherParameters> weatherParameters) {
+        this.weatherParameters = weatherParameters;
     }
 }
