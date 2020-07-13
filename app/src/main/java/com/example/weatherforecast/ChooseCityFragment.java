@@ -1,44 +1,51 @@
 package com.example.weatherforecast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.example.weatherforecast.data.Data;
 import com.example.weatherforecast.data.WeatherCity;
 import com.example.weatherforecast.data.WeatherParameters;
 
-public class ChooseCityActivity extends AppCompatActivity {
+public class ChooseCityFragment extends Fragment {
 
-    private static final String TAG = "ChooseCityActivity";
     private LinearLayout linearLayout;
     private Data data;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.choose_city);
-        Log.d(TAG, "onCreate");
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_choose_city, container, false);
         init();
-        linearLayout = findViewById(R.id.first_city);
+        linearLayout = view.findViewById(R.id.first_city);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(CityActivity.getIntent(ChooseCityActivity.this, "id", data.getWeatherCity().getId()));
+                CityActivity.changeFragment(new CityFragment(), getFragmentManager().beginTransaction());
             }
         });
+        return view;
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.options_menu, menu);
-        return true;
+    public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {
+        menuInflater.inflate(R.menu.options_menu, menu);
     }
 
     public void init(){
@@ -51,36 +58,6 @@ public class ChooseCityActivity extends AppCompatActivity {
         weatherCity.getWeatherParameters().add(param3);
         data = Data.getInstance();
         data.setWeatherCity(weatherCity);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(TAG, "onStart");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(TAG, "onResume");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d(TAG, "onPause");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(TAG, "onStop");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(TAG, "onDestroy");
     }
 
 }
