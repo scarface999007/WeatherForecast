@@ -6,7 +6,7 @@ import java.util.List;
 public class Data {
     private static Data instance;
 
-    private WeatherCity weatherCity;
+    private ArrayList<WeatherCity> weatherCities;
 
     public static Data getInstance(){
         if(instance == null) {
@@ -15,11 +15,15 @@ public class Data {
         return instance;
     }
 
-    public WeatherCity getWeatherCity() {
-        return weatherCity;
+    public ArrayList<WeatherCity> getWeatherCities() {
+        return weatherCities;
     }
 
-    public void setWeatherCity(WeatherCity weatherCity) {
-        this.weatherCity = weatherCity;
+    public void setWeatherCities(ArrayList<WeatherCity> weatherCities) {
+        this.weatherCities = weatherCities;
+    }
+
+    public WeatherCity getWeatherCityById(int id){
+        return weatherCities.get(id - 1);
     }
 }

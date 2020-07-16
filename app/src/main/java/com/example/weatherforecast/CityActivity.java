@@ -45,5 +45,4 @@ public class CityActivity extends AppCompatActivity {
         ft.addToBackStack(null);
         ft.commit();
     }
-
 }
