@@ -20,6 +20,7 @@ import com.example.weatherforecast.adapter.CityWeatherListAdapter;
 import com.example.weatherforecast.data.Data;
 import com.example.weatherforecast.data.WeatherCity;
 import com.example.weatherforecast.data.WeatherParameters;
+import com.google.android.material.snackbar.Snackbar;
 
 public class CityFragment extends Fragment {
 
@@ -71,7 +72,12 @@ public class CityFragment extends Fragment {
         goToWikiBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToWiki(weatherCity.getCity());
+                Snackbar.make(v, "Перейти на Wiki", Snackbar.LENGTH_LONG).setAction("Подтвердить", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        goToWiki(weatherCity.getCity());
+                    }
+                }).show();
             }
         });
         goBack = view.findViewById(R.id.go_back);

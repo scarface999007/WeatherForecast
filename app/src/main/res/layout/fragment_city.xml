@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9AC5E0"
+    android:background="@color/myBackgroundColor"
     tools:context=".CityActivity"
     android:orientation="vertical"
     android:gravity="center">
@@ -82,16 +82,18 @@
         android:layout_height="wrap_content"/>
 
     <Button
+        style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/go_to_wiki"
-        android:layout_marginTop="40dp"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="@string/go_to_wiki"/>
 
     <Button
+        style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/go_back"
-        android:layout_marginTop="0dp"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="@string/go_back"/>
 
